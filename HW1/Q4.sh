@@ -1,1 +1,1 @@
-find . -name '*.txt' | xargs -I{} grep -ir the . | wc -l >>Number
+find . -name '*.txt' | xargs -I{} grep -ir the {} | wc -l >>Number

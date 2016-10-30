@@ -1,30 +1,19 @@
 object Q5
 {
-def sortInsert(x : Int, xs : List[Int]) : List[Int] = {
 
-xs match{
-    case Nil => List(x)
-    case y :: xs1 =>
-        if(y <= x) x :: xs
-        else y :: sortInsert(x,  xs1)
- }
-
-}
-def Sort(xs : List[Int]) : List[Int] = {
-  xs match{
-    case Nil => Nil
-    case x :: xs1 => sortInsert(x, Sort(xs1))
-
-   }
-}
 def pivotSort(w : Int, xw : List[Int]): List[Int]=
     {
         
-        Sort(w :: xw)
+        if(xw==Nil)
+			xw:+ w
+		else if(xw.head <= w)
+			xw.head +: pivotSort(w,xw.tail)
+		else 
+			pivotSort(w,xw.tail) :+ xw.head
     }
  
 def main(args: Array[String])
 {
-    println(pivotSort(9, List(1, 6, 4, 12, 2)))
+    println(pivotSort(9, List(1, 6, 4, 12, 10, 13, 2)))
 }
 }

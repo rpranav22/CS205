@@ -1,1 +1,1 @@
-find . -name ‘*.txt’ | xargs -I{} tail -5 {} >> allmixedLast5
+find . -name ‘*.txt’ | xargs -I{} tail -5 {} >> allmixedLast5
